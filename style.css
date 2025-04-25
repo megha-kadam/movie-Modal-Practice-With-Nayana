@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.8) 0%,  
+      rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%), url(../images/IN-en-20250421-TRIFECTA-perspective_dc5bcfdf-88a5-4972-8ffe-b28ff942f76e_large.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+.logo{
+    display: inline-block;
+    width: 120px;
+}
+.logo img{
+    width: 100%;
+    /* height: 100%; */
+}
+
+.nfxBtn-primary{
+    background-color: #e50914;
+    border-color: #e50914;
+}
+.backDrop{
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    cursor: pointer;
+    display: none;
+    animation: fadeIn o.7s linear;
+}
+.backDrop.active{
+    display: block;
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+.movieModal{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+    top: 10%;
+    width: 60%;
+    left: 20%;
+    display: none;
+    animation: fadeIn 0.5s linear;
+}
+.movieModal.active{
+    display: block;
+}
+.addMovieBtn{
+    text-align: right;
+}
+.movieModal .card{
+    background: transparent;
+    color: white;
+}
+.movieModal .card .form-control{
+    border-color: rgb(128, 128,128, 0.6);
+    background-color: transparent;
+    color: white;
+}
+.movieModal .card select option{
+    background: transparent;
+    color: white;
+}
+.modalClose{
+    cursor: pointer;
+}
+
+.movieCard{
+    height: 350px;
+    border: 2px solid black;
+    overflow: hidden;
+    color: white;
+    position: relative;
+    border-radius: 3px;
+}
+.movieCard img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 
+.ratingTitle{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+ .movieInfo{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    overflow-y: auto;
+    /* display: none; */
+    /* transform:  scale(0);*/
+    transition: all 0.5s ease-in-out; 
+    transform: translateY(110%);
+}
+.action{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    display: none;
+}
+
+.movieCard:hover .movieInfo{
+    /* transform: scale(1); */transform: translateY(0);
+}
+.movieCard:hover .action{
+    display: flex;
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
